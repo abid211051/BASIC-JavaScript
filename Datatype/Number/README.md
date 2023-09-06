@@ -13,17 +13,17 @@
 8. Object
 </p>
 <br>
-<p>toString(base to convert) <br>base 2 = binnary, 8 = octal, 16 = hex
+<h3>toString(base to convert)</h3><p>base 2 = binnary, 8 = octal, 16 = hex
 toString use to convert a number to string.</p>
 
-<p>toPrecision(precision value) <br>
-toPrecision just convert the number value to string and cut the value from left on precision size.<br>
+<h3>toPrecision(precision value)</h3>
+<p>toPrecision just convert the number value to string and cut the value from left on precision size.<br>
 Example: 123.45 precision = 4; value = 123.4</p>
 
-<p>toFixed(precision) <br>
-toFixed set the precision after Decimal point. But it also retirn the value as string<br>
+<h3>toFixed(precision) </h3>
+<p>toFixed set the precision after Decimal point. But it also retirn the value as string<br>
 Example: 123.452 precision = 2; value = 123.45</p>
 
-<p>parseInt() convert string number to Integer value<br>
-parseFloat() convert string number to float value<br>
+<h3>parseInt() convert string number to Integer value</h3>
+<p>parseFloat() convert string number to float value<br>
 isNaN(value) check if the value is not a number. If number it will return false, if not number it will return true. <b>Note: if a string contain only number value, still it will return false, because it will assume those value as a number</b></p>
