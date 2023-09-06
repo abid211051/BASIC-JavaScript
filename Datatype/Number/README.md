@@ -1,6 +1,6 @@
 <h1>javscript Key Note</h1>
 
-<h3>Data type</h3>
+<h3>Number</h3>
 <p>
 7 basic data type in js:
 1. String (1 charachter as 1byte(8 bit))
