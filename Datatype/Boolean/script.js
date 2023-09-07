@@ -1,5 +1,6 @@
 // undefine, null, NaN return boolean false
 // if a variable have number 0 then it is boolean false, otherwise true for every number
+
 //undefine
 let x;
 console.log(x, Boolean(x));
@@ -27,3 +28,4 @@ console.log(val, Boolean(val));
 
 let cmp = 130 > 3;
 console.log(cmp)
+
