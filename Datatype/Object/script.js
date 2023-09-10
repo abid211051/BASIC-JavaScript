@@ -37,6 +37,6 @@ let step3 = step2.hand;
 let step4 = step3[2];
 console.log("After Accesesing step by step:\n",step4,"\n");
 
-//Accessing at time
+//Accessing at a time
 let  ankle = human_body.lower_part[1].Leg[2];
 console.log("After Accesesing at a time\n",ankle,"\n");

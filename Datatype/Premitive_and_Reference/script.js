@@ -19,7 +19,7 @@ console.log("After assigning new 'a' value again:\n", b, a,"\n");
 //**********Reference data type. Can be Array, Object, Collection
 //Refernce type are not dircetly store their value in Memory stack. They just store their refernce in Memory block with pointer.And this pointer will hold the address of the data.
 
-//Assume a Memory stack and a Heap. If we declare two reference type variable, then both will hold Individual pointer address in Memory stack. But their data will be into the heap, which is locating by pointer address from Memory. And if we Assign one variable of reference type into another variable, then 2nd variable will also locate the same Heap location which was for 1st variable. So their will be no Individual block in Heap for the 2nd variable as it is getting refernce from 1st one. They will just take different Memory block to hold their pointer in stack.
+//Assume a Memory stack and a Heap. If we declare two reference type variable, then both will hold Individual pointer address in Memory stack. But their data will be into the heap which is locating by pointer address from Memory. And if we Assign one variable of reference type into another variable, then 2nd variable will also locate the same Heap location which was for 1st variable. So their will be no Individual block in Heap for the 2nd variable as it is getting refernce from 1st one. They will just take different Memory block to hold their pointer in stack.
 //So As we said, 2nd variable also pointing to the same data location, so if we change any value from any variable it will effect another variable data also.
 
 let arr = [1,2, 3,4];
