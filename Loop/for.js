@@ -4,9 +4,8 @@ for(let i=0; i<arr.length; i++){
     console.log(`Index ${i}-> ${arr[i]}`);
 }
 
-console.log("\nForEach Loop: ")
 
-
+console.log("\nForEach Loop: ");
 // NOTE: foreach, map methods callback function body must be top of them.
 const printValue = (value, index)=>{
     value+=2;
@@ -14,6 +13,7 @@ const printValue = (value, index)=>{
 }
 arr.forEach(printValue);
 
+console.log("\nMap Loop: ");
 //Map method return a new array
 const mapvalue = (item, i)=>{
     item*=item;
