@@ -21,7 +21,7 @@ mySet.forEach((value) => {
 // JS Map also does not store key value pair in sorted manner as C++, it maintain insertion order.
 // JS map take O(1) time for almost every bellow operation
 console.log("\nMap Output:");
-const myMap = new Map();
+const myMap = new Map([["f",488]]);
 // O(1) in insertion key, value
 myMap.set("b", 188);
 myMap.set("c", 288);

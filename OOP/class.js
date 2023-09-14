@@ -24,22 +24,50 @@ console.log(obj1.fullname,"\n"); // The previous value "abid" and 21 is overwrit
 // we can create multiple object from that single class, and each object can have 
 // separate data using same property and method. So here we have to write less code
 // and no data overwritten is happening as each object is creating his own copy of class.
+
+// Instance and Encapsulation
 class Person {
-    constructor(name, year) {
+    //private property
+    #salary;
+    // Constructor to initialize variable or data
+    constructor(name, year, salary) {
         this.fullname = name;
         this.age = year;
+        this.#salary = salary;
     }
+    // Class method
     getdata(){
         return {
             name: this.fullname,
-            age: this.age
+            age: this.age,
+            salary : this.#salary,
         }
     }
 }
-let per1 = new Person("pranto", 23);
-let per2 = new Person("Robiul", 11);
-console.log("Class objects Output:");
+// Inheritance
+// Inheritance means getting other class property and method with his own class property
+class Cricketer extends Person {
+    #total_run;
+    constructor(name, year, salary, run){
+        // Super() is used to call Base class constructor 
+        super(name, year, salary);
+        this.#total_run = run;
+    }
+    // polymorphisom and method overridding
+    getdata(){
+        // By this super.method() we can call Base class methods
+        const ss = super.getdata();
+        return{
+            ...ss,
+            run : this.#total_run
+        }
+    }
+}
+let per1 = new Person("pranto", 23, 50000);
+console.log("Person class Output:");
 console.log(per1.getdata());
-console.log(per2.getdata());
 console.log(per1.fullname);
-console.log(per2.age);
+
+console.log("Cricketer class Output:");
+let cric1 = new Cricketer("Naim Sheik", 25, 100000, 80);
+console.log(cric1.getdata());
