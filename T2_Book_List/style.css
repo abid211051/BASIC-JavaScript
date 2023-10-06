@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.tableRow{
+    display: grid;
+    grid-template-columns: auto, auto, auto;
+    gap: 10px;
+}
+.tableRow div:nth-child(1){
+    grid-column: 1/ span 1;
+}
+.tableRow div:nth-child(2){
+    grid-column: 2/ span 1;
+
+}
+.tableRow div:nth-child(3){
+    grid-column: 3/ span 1;
+}
+.tableRow div{
+    border-bottom: 1px solid grey;
+}
+.alert{
+    opacity: 0;
+}
