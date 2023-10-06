@@ -13,6 +13,7 @@ allclear.addEventListener('click', clearAllTask);
 
 // Array for local storage data
 var lsdata;
+var id = 0;
 
 // Showing LocalStorage data in Initally loaded page
 function loadSavedTask(e) {
@@ -28,10 +29,13 @@ function loadSavedTask(e) {
     }
     // Now iterate on every "lsdata" item and priniting data on initally loaded DOM.
     lsdata.forEach((item) => {
-        output.innerHTML += `<li class="task">
-        <span>${item}</span>
+        let lis = document.createElement('li');
+        lis.setAttribute('id', `${item.id}`);
+        lis.innerHTML = `
+        <span>${item.value}</span>
         <button onclick="deleteTask(event)">Delete</button>
-    </li>`
+        `;
+        output.appendChild(lis);
     })
 }
 
@@ -39,20 +43,27 @@ function loadSavedTask(e) {
 function saveNewTask(e) {
     e.preventDefault();
     let inputvalue = input.value;
+    let dataobj = {
+        id : id,
+        value: inputvalue
+    }
     // Checking if input is empty or just special Charecter?
     if (inputvalue === '' || /^\W$/.test(inputvalue)) {
         alert('Please write a meaningfull task name')
     }
     else {
-        let li = `<li class="task">
-        <span>${inputvalue}</span>
+        let lis = document.createElement('li');
+        lis.setAttribute('id', `${dataobj.id}`);
+        lis.innerHTML = `
+        <span>${dataobj.value}</span>
         <button onclick="deleteTask(event)">Delete</button>
-    </li>`;
-        output.innerHTML += li;
+        `;
+        output.appendChild(lis);
         // Storing data in local storage. 
-        lsdata.push(inputvalue);
+        lsdata.push(dataobj);
         localStorage.setItem('tasks', JSON.stringify(lsdata)); //Note(To work with Non-string data we should use stringify() to serialize or deserialize data)
     }
+    id++;
     input.value = null;
 }
 
@@ -60,13 +71,12 @@ function saveNewTask(e) {
 function deleteTask(e) {
     // Receving the "parentElemet" of the "delete" button. [In this case it is a '<li>']
     let doc = e.target.parentElement;
-    // Then getting the text from <span> tag which is children[0].
-    let text = doc.children[0].textContent;
-    // Now iterate on every "lsdata" item, and try to match "text" of the delete button.
-    // if match is found then delete that "text" from that position in array.
     lsdata.forEach((item, key) => {
-        if (item === text) {
+        if (String(item.id) === doc.id) {
             lsdata.splice(key, 1);
+        }
+        else{
+            console.log("Not matched")
         }
     })
     // Now reassign the "lsdata" in localstorage with remaining data. [Afte deletion]
