@@ -1,5 +1,8 @@
-const input = require('prompt-sync')({ sigint: true });
+let arr = [1, 2, 3, 4,];
+function arrmulti(my){
+    my.forEach((item)=>item*3);
+    return my;
+}
 
-const reg = /^.*$/;
-const str = "ab";
-console.log(reg.exec(str));
+let ans = arrmulti(arr);
+console.log(ans)
