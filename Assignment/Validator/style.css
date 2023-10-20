@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: block;
+    padding: 0 50px;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(194, 192, 192);
+}
+h1{
+    padding-top: 30px;
+    margin-bottom: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3em;
+    font-weight: 900;
+    color: rgb(36, 65, 65);
+    text-align: center;
+}
+.alert{
+    margin: 0 auto;
+    width: 50%;
+    min-height: 50px;
+    padding: 10px;
+    background-color: antiquewhite;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    /* border-bottom: 4px solid green; */
+    opacity: 1;
+    transition: all 0.2s ease;
+}
+.alert p{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: rgb(68, 68, 68);
+}
+.btn-div p,
+.inputDiv p{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+    font-size: 1.5em;
+}
+.btn-div{
+    margin: 0 auto;
+    width: 80%;
+}
+.btnDivHide{
+    display: none;
+}
+.option{
+    display: block;
+    width: 100%;
+    min-height: 40px;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 3px;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: rgb(73, 72, 72);
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px gray;
+}
+.option:active{
+    scale: 0.97;
+    transition: all 0.01s ease;
+}
+.inputDiv{
+    margin: 0 auto;
+    display: none;
+    width: 80%;
+}
+.inputDivShow{
+    display: block;
+}
+.back{
+    width: 15%;
+    min-height: 30px;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 2px 5px gray;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.back:active{
+    scale: 0.95;
+}
+input{
+    width: 100%;
+    height: 40px;
+    font-size: large;
+    padding: 4px;
+    border-radius: 10px;
+    border: 1px solid gray
+}
+.inpBtn{
+    display: block;
+    width: 100%;
+    min-height: 40px;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 3px;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: rgb(73, 72, 72);
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px gray;
+}
+
+@media only screen and (max-width: 768px){
+    .container{
+        padding: 0 10px;
+    }
+    h1{
+        font-size: 2em;
+    }
+    .btn-div{
+        width: 100%;
+    }
+    .alert{
+        width: 100%;
+    }
+    .inputDiv{
+        width: 100%;
+    }
+    .back{
+        width: 100%;
+    }
+}

@@ -1,0 +1,14 @@
+[
+    {
+        "name":"phone",
+        "text":"Phone Number"
+    },
+    {
+        "name":"email",
+        "text":"Email Address"
+    },
+    {
+        "name":"postcode",
+        "text":"Postal Code"
+    }
+]
