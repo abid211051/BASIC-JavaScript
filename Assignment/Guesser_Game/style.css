@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 20px;
+}
+h1{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+h4{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+.alert{
+    width: 50%;
+    min-height: 50px;
+    margin: 50px auto;
+    padding: 10px;
+    opacity: 0;
+    background-color: rgb(254, 239, 222);
+    font-size: large;
+    font-weight: 800;
+    color: blueviolet;
+    border-bottom: 2px solid blueviolet;
+}
+.startbtn{
+    width: 100%;
+    margin-top: 20px;
+    padding: 5px;
+    cursor: pointer;
+    font-size: medium;
+    opacity: 1;
+}
+.gameDiv{
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.inp input{
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+}
+.submitbtn{
+    display: block;
+    width: 100%;
+    padding: 5px;
+    cursor: pointer;
+}
+.restartbtn{
+    width: 20%;
+    margin-top: 20px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px){
+    .container{
+        padding: 10px;
+    }
+    .alert{
+        width: 100%;
+    }
+    .gameDiv{
+        width: 100%;
+    }
+}
