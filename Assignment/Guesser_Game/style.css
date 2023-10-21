@@ -29,6 +29,8 @@ h4{
     border-bottom: 2px solid blueviolet;
 }
 .startbtn{
+    font-family: cursive;
+    letter-spacing: 2px;
     width: 100%;
     margin-top: 20px;
     padding: 5px;
@@ -42,18 +44,29 @@ h4{
     display: flex;
     flex-direction: column;
 }
+.gameDiv p{
+    display: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    color: rgb(135, 40, 0);
+    margin-bottom: 10px;
+}
 .inp input{
     width: 100%;
     padding: 8px;
     margin: 5px 0;
 }
 .submitbtn{
+    font-family: cursive;
+    letter-spacing: 2px;
     display: block;
     width: 100%;
     padding: 5px;
     cursor: pointer;
 }
 .restartbtn{
+    font-family: cursive;
+    letter-spacing: 2px;
     width: 20%;
     margin-top: 20px;
     padding: 5px;

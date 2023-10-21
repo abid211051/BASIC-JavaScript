@@ -3,6 +3,7 @@ let startBtn = document.querySelector('.startbtn');
 let inpDiv = document.querySelector('.inp');
 let alertDiv = document.querySelector('.alert');
 let chance = document.querySelector('.gameDiv h4');
+let comment = document.querySelector('.gameDiv p');
 
 // Global variables
 let correct_ans;
@@ -12,6 +13,7 @@ class UI {
     static generateInputBox() {
         Logic.generateRandomNumber();
         startBtn.style.display = 'none';
+        comment.style.display = 'block';
         inpDiv.innerHTML = `
         <form action="" onsubmit="takeInput(event)">
                     <input type="text" placeholder="Put the number" name="num">
@@ -21,20 +23,22 @@ class UI {
         `
     }
     static alertMessage(message) {
-        alertDiv.style.opacity  = 1;
+        alertDiv.style.opacity = 1;
         alertDiv.innerHTML = `<p>Hint: ${message}</p>`
-        setTimeout(()=>{
-            alertDiv.style.opacity  = 0;
-        }, 2000)
+        setTimeout(() => {
+            alertDiv.style.opacity = 0;
+        }, 2500)
     }
-    static winLoseMessage(message, child){
-        alertDiv.style.opacity  = 1;
+    static winLoseMessage(message, child) {
+        alertDiv.style.opacity = 1;
+        comment.style.display = 'none';
         alertDiv.innerHTML = `<p>${message}</p>`
         child[0].disabled = true;
         child[1].disabled = true;
     }
-    static restartGame(child){
-        alertDiv.style.opacity  = 0;
+    static restartGame(child) {
+        alertDiv.style.opacity = 0;
+        comment.style.display = 'block';
         Logic.generateRandomNumber();
         count = 3;
         chance.innerHTML = `Chance: ${count}`;
@@ -55,18 +59,18 @@ class Logic {
             UI.winLoseMessage('You Win', child);
         }
         else if (parseInt(val) > correct_ans) {
-            if(count <= 0){
+            if (count <= 0) {
                 UI.winLoseMessage('You Lose!', child);
             }
-            else{
+            else {
                 UI.alertMessage('Correct answer is smaller!');
             }
         }
         else if (parseInt(val) < correct_ans) {
-            if(count <= 0){
+            if (count <= 0) {
                 UI.winLoseMessage('You Lose!', child);
             }
-            else{
+            else {
                 UI.alertMessage('Correct answer is greater!');
             }
         }
@@ -79,12 +83,15 @@ const takeInput = (e) => {
     e.preventDefault();
     let child = e.target.children;
     let inputValue = e.target.num.value;
-    if (inputValue !== '') {
+    if (inputValue !== '' && /^\d+$/.test(inputValue)) {
         Logic.testUserInput(inputValue, child);
+    }
+    else {
+        UI.alertMessage('Please Enter a Number');
     }
 }
 
-const restart = (e)=>{
+const restart = (e) => {
     let child = e.target.previousElementSibling.children;
     UI.restartGame(child);
 }
